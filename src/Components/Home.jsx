@@ -11,7 +11,7 @@ const Home = () => {
           alt="img not found"
           className=" h-[600px] md:h-[750px] absolute right-0 "
         />
-        <img src="" alt="" />
+        {/* <img src="" alt="" /> */}
         <p className=" text-3xl font-bold z-0 absolute top-[45%] md:top-[35%] xl:top-[45%] mx-[20%] text-white">
           <br />
           Amit Paudel
