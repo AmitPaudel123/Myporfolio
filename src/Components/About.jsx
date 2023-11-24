@@ -36,7 +36,7 @@ const About = () => {
             </p>
             <p>
               {" "}
-              <span className=" font-bold text-lg">Phone:</span> 9814879921
+              <span className=" font-bold text-lg">Phone:</span> 9876543210
             </p>
             <p>
               {" "}
@@ -55,7 +55,7 @@ const About = () => {
             <p>
               {" "}
               <span className=" font-bold text-lg">E-mail:</span>{" "}
-              ameet3579@gmail.com
+              myportfolio123@gmail.com
             </p>
             <p>
               {" "}
