@@ -19,7 +19,7 @@ const Contact = () => {
           information:
         </p>
 
-        <div className=" xl:flex xl:space-x-2 my-5">
+        <div className=" xl:flex  my-5">
           <div className=" mx-1  rounded-sm w-full h-fit shadow-black shadow-sm py-5 flex flex-col space-y-4 px-2 xl:w-[40%]">
             <div className=" flex items-center space-x-2">
               <img src={loc} alt="" className=" w-10 h-10" />
@@ -57,7 +57,7 @@ const Contact = () => {
                   type="text"
                   name=""
                   id="name"
-                  className=" border-slate-500 border-[1px] w-72 h-10 my-2"
+                  className=" border-slate-500 border-[1px] w-72np 2xl:w-[17rem] h-10 my-2"
                 />
               </div>
               <div>
@@ -93,7 +93,7 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="xl:my-2">
-              <button className=" bg-blue-500 text-white text-center px-5 py-2 rounded-md active:bg-blue-600 mx-16 xl:mx-52 xl:mb-[4.8rem]">
+              <button className=" bg-blue-500 text-white text-center px-5 py-2 rounded-md active:bg-blue-600  xl:mb-[4.8rem]">
                 Send Message
               </button>
             </div>

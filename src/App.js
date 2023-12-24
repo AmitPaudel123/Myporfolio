@@ -10,7 +10,6 @@ import linkedin from "./Pictures/linkedin.png";
 import user from "./Pictures/user-3-line.png";
 import home from "./Pictures/home-4-line.png";
 import resume from "./Pictures/file-reduce-line.png";
-import portfolio from "./Pictures/portfolio.png";
 import skillicon from "./Pictures/skills1.png";
 import contact from "./Pictures/contacticon.png";
 import services from "./Pictures/service-fill.png";
@@ -19,6 +18,7 @@ import Skills from "./Components/Skills";
 import Services from "./Components/Services";
 import Contact from "./Components/Contact";
 import Portfolio from "./Components/Portfolio";
+import TypeWriters from "./Components/TypeWriters";
 const App = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [bol, setBol] = useState(false);
@@ -307,7 +307,7 @@ const App = () => {
       {/* side nav bar */}
 
       <nav
-        className=" w-[75%] bg-slate-800 text-white fixed h-full px-5 translate-x-[-100%] xl:w-[30%] xl:translate-x-[0%] z-50"
+        className=" w-[75%] bg-slate-800 text-white fixed h-full px-5 translate-x-[-100%] md:w-[50%] lg:w-[40%] xl:hidden xl:translate-x-[0%] z-50"
         style={navbar}
       >
         <div className=" bg-slate-500 w-fit rounded-full mx-auto my-5">
@@ -321,7 +321,122 @@ const App = () => {
           Amit Paudel
         </p>
 
-        <div className=" flex space-x-3 justify-center ">
+        <div className=" flex space-x-3 justify-center">
+          <img
+            src={facebook}
+            alt="img not found"
+            className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full cursor-pointer"
+          />
+          <img
+            src={insta}
+            alt="img not found"
+            className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full cursor-pointer"
+          />
+          <img
+            src={whatsapp}
+            alt="img not found"
+            className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full cursor-pointer"
+          />
+          <img
+            src={linkedin}
+            alt="img not found"
+            className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full cursor-pointer"
+          />
+        </div>
+
+        <div className=" flex flex-col space-y-4 mt-5 mx-5">
+          <div
+            className=" flex items-center space-x-3 text-lg cursor-pointer"
+            onClick={showHome}
+          >
+            <img
+              src={home}
+              alt="img not found"
+              className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
+            />
+            <p>Home</p>
+          </div>
+
+          <div
+            className=" flex items-center space-x-3 text-lg cursor-pointer"
+            onClick={showAbout}
+          >
+            <img
+              src={user}
+              alt="img not found"
+              className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
+            />
+            <p>About</p>
+          </div>
+
+          <div
+            className=" flex items-center space-x-3 text-lg cursor-pointer"
+            onClick={showSkills}
+          >
+            <img
+              src={skillicon}
+              alt="img not found"
+              className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
+            />
+            <p>Skills</p>
+          </div>
+
+          <div
+            className=" flex items-center space-x-3 text-lg cursor-pointer"
+            onClick={showPortfolio}
+          >
+            <img
+              src={resume}
+              alt="img not found"
+              className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
+            />
+            <p>Portfolio</p>
+          </div>
+
+          <div
+            className=" flex items-center space-x-3 text-lg cursor-pointer"
+            onClick={showServices}
+          >
+            <img
+              src={services}
+              alt="img not found"
+              className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
+            />
+            <p>Services</p>
+          </div>
+          <div
+            className=" flex items-center space-x-3 text-lg cursor-pointer"
+            onClick={showContact}
+          >
+            <img
+              src={contact}
+              alt="img not found"
+              className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
+            />
+            <p>Contact</p>
+          </div>
+        </div>
+        <div className=" text-center xl:mt-10 mt-5">
+          &copy; Copyright 2023 All rights reserved
+        </div>
+      </nav>
+
+      <nav
+        className=" w-[75%] bg-slate-800 text-white fixed h-full px-5 translate-x-[-100%] md:w-[50%] lg:w-[40%] xl:w-[30%] xl:translate-x-[0%] z-50"
+        // style={navbar}
+      >
+        <div className=" bg-slate-500 w-fit rounded-full mx-auto my-5">
+          <img
+            src={mypic}
+            alt=" img not found"
+            className=" w-52 h-52 rounded-full p-2"
+          />
+        </div>
+        <p className=" text-white text-3xl font-bold text-center mb-5">
+          Amit Paudel
+        </p>
+
+        <div className=" flex space-x-3 justify-center">
           <img
             src={facebook}
             alt="img not found"
