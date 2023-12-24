@@ -33,7 +33,7 @@ const Contact = () => {
               <img src={email} alt="" className=" w-8 h-8" />
               <div>
                 <span className="text-2xl font-semibold"> Email:</span>{" "}
-                <p>ameet2357@gmail.com</p>
+                <p>myportfolio123@gmail.com</p>
               </div>
             </div>
 
@@ -41,7 +41,7 @@ const Contact = () => {
               <img src={phone} alt="" className=" w-10 h-10" />
               <div>
                 <span className="text-2xl font-semibold"> Call:</span>{" "}
-                <p>9864079370</p>
+                <p>9876543210</p>
               </div>
             </div>
 
