@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import mypic from "./Pictures/amitpic.jpg";
 import facebook from "./Pictures/facebook (1).png";
@@ -18,7 +18,8 @@ import Skills from "./Components/Skills";
 import Services from "./Components/Services";
 import Contact from "./Components/Contact";
 import Portfolio from "./Components/Portfolio";
-import TypeWriters from "./Components/TypeWriters";
+
+import roundedimg from "./Pictures/homeimage-small.png";
 const App = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [bol, setBol] = useState(false);
@@ -31,7 +32,7 @@ const App = () => {
       : { transform: "translateX(0%)" }
   );
 
-  //navbar functionality
+  //navbar functionality for smaller devices
   const handleNav = () => {
     console.log("clicked");
     if (bol === false) {
@@ -304,15 +305,15 @@ const App = () => {
         </button>
       )}
 
-      {/* side nav bar */}
+      {/* side nav bar for smaller devices*/}
 
       <nav
-        className=" w-[75%] bg-slate-800 text-white fixed h-full px-5 translate-x-[-100%] md:w-[50%] lg:w-[40%] xl:hidden xl:translate-x-[0%] z-50"
+        className=" w-[75%] bg-slate-800 text-white fixed h-full px-5 translate-x-[-100%] md:w-[50%] lg:w-[40%] xl:hidden z-50"
         style={navbar}
       >
         <div className=" bg-slate-500 w-fit rounded-full mx-auto my-5">
           <img
-            src={mypic}
+            src={roundedimg}
             alt=" img not found"
             className=" w-52 h-52 rounded-full p-2"
           />
@@ -427,7 +428,7 @@ const App = () => {
       >
         <div className=" bg-slate-500 w-fit rounded-full mx-auto my-5">
           <img
-            src={mypic}
+            src={roundedimg}
             alt=" img not found"
             className=" w-52 h-52 rounded-full p-2"
           />
@@ -437,26 +438,35 @@ const App = () => {
         </p>
 
         <div className=" flex space-x-3 justify-center">
-          <img
-            src={facebook}
-            alt="img not found"
-            className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full cursor-pointer"
-          />
-          <img
-            src={insta}
-            alt="img not found"
-            className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full cursor-pointer"
-          />
+          <Link to="https://www.facebook.com/ameetpoudel.ameetpoudel">
+            {" "}
+            <img
+              src={facebook}
+              alt="img not found"
+              className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full cursor-pointer"
+            />
+          </Link>
+
+          <Link to="https://www.instagram.com/mr.paudel3?igsh=czRsd3JianRodjdy">
+            <img
+              src={insta}
+              alt="img not found"
+              className="w-10 h-10 bg-pink-500 hover:bg-pink-600 rounded-full cursor-pointer"
+            />
+          </Link>
           <img
             src={whatsapp}
             alt="img not found"
             className="w-10 h-10 bg-green-500 hover:bg-green-600 rounded-full cursor-pointer"
           />
-          <img
-            src={linkedin}
-            alt="img not found"
-            className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full cursor-pointer"
-          />
+          <Link to="https://www.linkedin.com/in/amit-paudel-9ba892278">
+            {" "}
+            <img
+              src={linkedin}
+              alt="img not found"
+              className="w-10 h-10 bg-blue-500 hover:bg-blue-600 rounded-full cursor-pointer"
+            />
+          </Link>
         </div>
 
         <div className=" flex flex-col space-y-4 mt-5 mx-5">

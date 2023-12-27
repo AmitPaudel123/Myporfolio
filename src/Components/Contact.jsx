@@ -1,9 +1,35 @@
 import React from "react";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
+
 import loc from "../Pictures/loc-icon.png";
 import email from "../Pictures/email-blue.png";
 import phone from "../Pictures/mobilePhone.png";
 import myMap from "../Pictures/map.jpg";
 const Contact = () => {
+  //for email js
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_b0iivca",
+        "template_gai3wmj",
+        form.current,
+        "jW0iNOsycoUVIC-ye"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <>
       <div className="my-5 py-10 px-2 md:float-right w-full xl:w-[70%]">
@@ -47,17 +73,21 @@ const Contact = () => {
 
             <img src={myMap} alt="img not found" />
           </div>
-
-          <div className=" w-full h-fit shadow-sm  shadow-black px-7 py-5 text-lg rounded-sm xl:w-[60%] my-5 xl:my-0 mx-1">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className=" w-full h-fit shadow-sm  shadow-black px-7 py-5 text-lg rounded-sm xl:w-[60%] my-5 xl:my-0 mx-1"
+          >
             <div className=" xl:flex xl:space-x-2 xl:my-2">
               <div>
                 <label htmlFor="name">Your Name:</label>
                 <br />
                 <input
                   type="text"
-                  name=""
+                  name="user_name"
                   id="name"
                   className=" border-slate-500 border-[1px] w-72np 2xl:w-[17rem] h-10 my-2"
+                  maxLength={30}
                 />
               </div>
               <div>
@@ -65,7 +95,7 @@ const Contact = () => {
                 <br />
                 <input
                   type="email"
-                  name=""
+                  name="to_email"
                   id="email"
                   className=" border-slate-500 border-[1px] w-72 h-10 my-2"
                 />
@@ -76,16 +106,17 @@ const Contact = () => {
               <br />
               <input
                 type="text"
-                name=""
+                name="subject"
                 id="subject"
                 className=" border-slate-500 border-[1px] w-72 h-10 my-2 xl:w-full"
+                maxLength={40}
               />
             </div>
             <div className="xl:my-2">
               <label htmlFor="message">Message:</label>
               <br />
               <textarea
-                name=""
+                name="message"
                 id="message"
                 cols="34"
                 rows="7"
@@ -93,11 +124,14 @@ const Contact = () => {
               ></textarea>
             </div>
             <div className="xl:my-2">
-              <button className=" bg-blue-500 text-white text-center px-5 py-2 rounded-md active:bg-blue-600  xl:mb-[4.8rem]">
-                Send Message
-              </button>
+              <input
+                type="submit"
+                value="Send"
+                name="Send message"
+                className=" bg-blue-500 text-white text-center px-5 py-2 rounded-md hover:bg-blue-600 active:bg-slate-600 cursor-pointer xl:mb-[4.8rem]"
+              />
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </>

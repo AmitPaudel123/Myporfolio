@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
-import mypic from "../Pictures/Pic.png";
-import bgImg from "../Pictures/bg.jpg";
 import TypeWriters from "./TypeWriters";
+import homeimg from "../Pictures/homeimage.png";
+import homeimg2 from "../Pictures/homeimage-small.png";
 const Home = () => {
   return (
     <>
       <div className=" h-[600px] md:h-[750px] xl:float-right xl:w-[70%]  home">
         <img
-          src={mypic}
+          src={homeimg}
           alt="img not found"
-          className=" h-[600px] md:h-[750px] absolute right-0 "
+          className=" hidden md:block h-[600px] md:h-[750px] absolute right-0 "
+        />
+        <img
+          src={homeimg2}
+          alt="img not found"
+          className=" md:block h-[600px] md:h-[750px] absolute right-0 "
         />
         {/* <img src="" alt="" /> */}
         <div>

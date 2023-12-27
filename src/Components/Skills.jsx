@@ -77,7 +77,7 @@ const Skills = () => {
             </div>
             <div>
               <div className=" flex justify-between font-bold">
-                <p>Photoshop</p>
+                <p>Git/Github</p>
                 <p>60%</p>
               </div>
               <div className=" w-full bg-slate-300 h-3 ">
