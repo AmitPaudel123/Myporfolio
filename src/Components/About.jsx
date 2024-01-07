@@ -4,7 +4,7 @@ import mypic from "../Pictures/amit.JPG";
 const About = () => {
   return (
     <>
-      <div className="  px-2 w-full xl:w-[70%] md:float-right">
+      <div className="  px-2 w-full xl:w-[70%] md:float-right" id="about">
         <div>
           <p className=" text-2xl font-bold text-blue-900"> About</p>
           <p className=" w-10 h-[3px] bg-blue-500 rounded-md my-2"></p>

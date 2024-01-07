@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import { Link, Route, Routes } from "react-router-dom";
+// import { Link, Route, Routes } from "react-router-dom";
 import Home from "./Components/Home";
 import mypic from "./Pictures/amitpic.jpg";
 import facebook from "./Pictures/facebook (1).png";
@@ -19,22 +19,16 @@ import Services from "./Components/Services";
 import Contact from "./Components/Contact";
 import Portfolio from "./Components/Portfolio";
 
+import { Link } from "react-scroll";
 import roundedimg from "./Pictures/homeimage-small.png";
 const App = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
   const [bol, setBol] = useState(false);
   const [menuBtn, setMenuBtn] = useState(<>&#9776;</>);
-  const [navbar, setNavbar] = useState(
-    window.innerWidth < 1280
-      ? {
-          transform: "translateX(-100%)",
-        }
-      : { transform: "translateX(0%)" }
-  );
+  const [navbar, setNavbar] = useState({ transform: "translateX(-100%)" });
 
   //navbar functionality for smaller devices
   const handleNav = () => {
-    console.log("clicked");
     if (bol === false) {
       setMenuBtn(<>&times;</>);
       setNavbar({
@@ -69,221 +63,6 @@ const App = () => {
     }
   });
 
-  //home functionality
-  const showHome = () => {
-    if (window.innerWidth < 1280) {
-      setNavbar({
-        transform: "translateX(-100%)",
-        transition: "0.5s ease-in-out",
-      });
-      setMenuBtn(<>&#9776;</>);
-      setBol(false);
-    }
-    window.scrollTo({
-      top: "0",
-      behavior: "smooth",
-    });
-  };
-
-  //about functionality
-  const showAbout = () => {
-    if (window.innerWidth < 1280) {
-      setNavbar({
-        transform: "translateX(-100%)",
-        transition: "0.5s ease-in-out",
-      });
-      setMenuBtn(<>&#9776;</>);
-      setBol(false);
-    }
-    if (window.innerWidth < 768) {
-      window.scrollTo({
-        top: 600,
-        behavior: "smooth",
-      });
-    } else {
-      window.scrollTo({
-        top: 750,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  //skills functionality
-  const showSkills = () => {
-    if (window.innerWidth < 1280) {
-      setNavbar({
-        transform: "translateX(-100%)",
-        transition: "0.5s ease-in-out",
-      });
-      setMenuBtn(<>&#9776;</>);
-      setBol(false);
-    }
-
-    if (window.innerWidth <= 400) {
-      window.scrollTo({
-        top: 1950,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 400 && window.innerWidth <= 700) {
-      window.scrollTo({
-        top: 2000,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 700 && window.innerWidth <= 820) {
-      window.scrollTo({
-        top: 2150,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 820 && window.innerWidth <= 1000) {
-      window.scrollTo({
-        top: 2160,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1000 && window.innerWidth <= 1280) {
-      window.scrollTo({
-        top: 2170,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1280) {
-      window.scrollTo({
-        top: 2150,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  //portfolio functionality
-  const showPortfolio = () => {
-    if (window.innerWidth < 1280) {
-      setNavbar({
-        transform: "translateX(-100%)",
-        transition: "0.5s ease-in-out",
-      });
-      setMenuBtn(<>&#9776;</>);
-      setBol(false);
-    }
-
-    if (window.innerWidth <= 400) {
-      window.scrollTo({
-        top: 2475,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 400 && window.innerWidth <= 700) {
-      window.scrollTo({
-        top: 2515,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 700 && window.innerWidth <= 820) {
-      window.scrollTo({
-        top: 2620,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 820 && window.innerWidth <= 1000) {
-      window.scrollTo({
-        top: 2620,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1000 && window.innerWidth <= 1280) {
-      window.scrollTo({
-        top: 2610,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1280) {
-      window.scrollTo({
-        top: 2580,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  // services functionality
-  const showServices = () => {
-    if (window.innerWidth < 1280) {
-      setNavbar({
-        transform: "translateX(-100%)",
-        transition: "0.5s ease-in-out",
-      });
-      setMenuBtn(<>&#9776;</>);
-      setBol(false);
-    }
-
-    if (window.innerWidth <= 400) {
-      window.scrollTo({
-        top: 3850,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 400 && window.innerWidth <= 700) {
-      window.scrollTo({
-        top: 4040,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 700 && window.innerWidth <= 820) {
-      window.scrollTo({
-        top: 5250,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 820 && window.innerWidth <= 1000) {
-      window.scrollTo({
-        top: 5600,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1000 && window.innerWidth <= 1280) {
-      window.scrollTo({
-        top: 6000,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1280) {
-      window.scrollTo({
-        top: 4210,
-        behavior: "smooth",
-      });
-    }
-  };
-
-  //contact functionality
-  const showContact = () => {
-    if (window.innerWidth < 1280) {
-      setNavbar({
-        transform: "translateX(-100%)",
-        transition: "0.5s ease-in-out",
-      });
-      setMenuBtn(<>&#9776;</>);
-      setBol(false);
-    }
-
-    if (window.innerWidth <= 400) {
-      window.scrollTo({
-        top: 5180,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 400 && window.innerWidth <= 700) {
-      window.scrollTo({
-        top: 5380,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 700 && window.innerWidth <= 820) {
-      window.scrollTo({
-        top: 6450,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 820 && window.innerWidth <= 1000) {
-      window.scrollTo({
-        top: 6900,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1000 && window.innerWidth <= 1280) {
-      window.scrollTo({
-        top: 7000,
-        behavior: "smooth",
-      });
-    } else if (window.innerWidth > 1280) {
-      window.scrollTo({
-        top: 4800,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <>
       {/* menu button */}
@@ -305,12 +84,9 @@ const App = () => {
         </button>
       )}
 
-      {/* side nav bar for smaller devices*/}
+      {/* side nav bar for larger devices*/}
 
-      <nav
-        className=" w-[75%] bg-slate-800 text-white fixed h-full px-5 translate-x-[-100%] md:w-[50%] lg:w-[40%] xl:hidden z-50"
-        style={navbar}
-      >
+      <nav className=" bg-slate-800 text-white fixed h-full px-5 md:w-[50%] lg:w-[40%] xl:w-[30%] hidden xl:block z-50">
         <div className=" bg-slate-500 w-fit rounded-full mx-auto my-5">
           <img
             src={roundedimg}
@@ -346,75 +122,114 @@ const App = () => {
         </div>
 
         <div className=" flex flex-col space-y-4 mt-5 mx-5">
-          <div
-            className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showHome}
-          >
-            <img
-              src={home}
-              alt="img not found"
-              className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
-            />
-            <p>Home</p>
+          <div>
+            <div className=" flex items-center space-x-3 text-lg cursor-pointer">
+              <img
+                src={home}
+                alt="img not found"
+                className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
+              />
+              <div>
+                <Link
+                  activeClass="active"
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  offset={1}
+                  duration={500}
+                >
+                  Home{" "}
+                </Link>{" "}
+              </div>
+            </div>
           </div>
 
-          <div
-            className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showAbout}
-          >
+          <div className=" flex items-center space-x-3 text-lg cursor-pointer">
             <img
               src={user}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>About</p>
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+            >
+              About{" "}
+            </Link>{" "}
           </div>
 
-          <div
-            className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showSkills}
-          >
+          <div className=" flex items-center space-x-3 text-lg cursor-pointer">
             <img
               src={skillicon}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Skills</p>
+            <Link
+              activeClass="active"
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+            >
+              Skills{" "}
+            </Link>{" "}
           </div>
 
-          <div
-            className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showPortfolio}
-          >
+          <div className=" flex items-center space-x-3 text-lg cursor-pointer">
             <img
               src={resume}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Portfolio</p>
+            <Link
+              to="portfolioo"
+              spy={true}
+              smooth={true}
+              offset={480}
+              duration={500}
+            >
+              Portfolio
+            </Link>
           </div>
 
-          <div
-            className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showServices}
-          >
+          <div className=" flex items-center space-x-3 text-lg cursor-pointer">
             <img
               src={services}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Services</p>
+            <Link
+              activeClass="active"
+              to="services"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+            >
+              Services{" "}
+            </Link>{" "}
           </div>
-          <div
-            className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showContact}
-          >
+          <div className=" flex items-center space-x-3 text-lg cursor-pointer">
             <img
               src={contact}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Contact</p>
+            <Link
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+            >
+              Contact{" "}
+            </Link>{" "}
           </div>
         </div>
         <div className=" text-center xl:mt-10 mt-5">
@@ -422,9 +237,10 @@ const App = () => {
         </div>
       </nav>
 
+      {/* side navbar for smaller devices */}
       <nav
-        className=" w-[75%] bg-slate-800 text-white fixed h-full px-5 translate-x-[-100%] md:w-[50%] lg:w-[40%] xl:w-[30%] xl:translate-x-[0%] z-50"
-        // style={navbar}
+        className=" bg-slate-800 text-white lg:hidden fixed h-full px-5 md:w-[50%] z-50"
+        style={navbar}
       >
         <div className=" bg-slate-500 w-fit rounded-full mx-auto my-5">
           <img
@@ -472,73 +288,134 @@ const App = () => {
         <div className=" flex flex-col space-y-4 mt-5 mx-5">
           <div
             className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showHome}
+            onClick={handleNav}
           >
             <img
               src={home}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Home</p>
+            <Link
+              activeClass="active"
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onClick={handleNav}
+            >
+              Home{" "}
+            </Link>
           </div>
 
           <div
             className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showAbout}
+            onClick={handleNav}
           >
             <img
               src={user}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>About</p>
+            <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+              onClick={handleNav}
+            >
+              About{" "}
+            </Link>
           </div>
 
           <div
             className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showSkills}
+            onClick={handleNav}
           >
             <img
               src={skillicon}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Skills</p>
+            <Link
+              activeClass="active"
+              to="skills"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+              onClick={handleNav}
+            >
+              Skills{" "}
+            </Link>
           </div>
 
           <div
             className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showPortfolio}
+            onClick={handleNav}
           >
             <img
               src={resume}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Portfolio</p>
+            <Link
+              activeClass="active"
+              to="portfolioo"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+              onClick={handleNav}
+            >
+              Portfolio{" "}
+            </Link>
           </div>
 
           <div
             className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showServices}
+            onClick={handleNav}
           >
             <img
               src={services}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Services</p>
+            <Link
+              activeClass="active"
+              to="services"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+              onClick={handleNav}
+            >
+              Services{" "}
+            </Link>
           </div>
           <div
             className=" flex items-center space-x-3 text-lg cursor-pointer"
-            onClick={showContact}
+            onClick={handleNav}
           >
             <img
               src={contact}
               alt="img not found"
               className=" w-8 h-8 rounded-full bg-blue-400 hover:bg-blue-600"
             />
-            <p>Contact</p>
+            {/* <p>Contact</p> */}
+            <Link
+              activeClass="active"
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={1}
+              duration={500}
+              onClick={handleNav}
+            >
+              Contact{" "}
+            </Link>
           </div>
         </div>
         <div className=" text-center xl:mt-10 mt-5">

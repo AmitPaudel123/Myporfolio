@@ -32,7 +32,10 @@ const Contact = () => {
 
   return (
     <>
-      <div className="my-5 py-10 px-2 md:float-right w-full xl:w-[70%]">
+      <div
+        className="my-5 py-10 px-2 md:float-right w-full xl:w-[70%]"
+        id="contact"
+      >
         <div>
           <p className=" text-2xl font-bold text-blue-900"> Contact</p>
           <p className=" w-10 h-[3px] bg-blue-500 rounded-md my-2"></p>

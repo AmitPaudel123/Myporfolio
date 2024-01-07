@@ -3,7 +3,10 @@ import React from "react";
 const Skills = () => {
   return (
     <>
-      <div className=" my-5 py-10 px-2 bg-blue-50 w-full xl:w-[70%] float-right">
+      <div
+        className=" my-5 py-10 px-2 bg-blue-50 w-full xl:w-[70%] float-right"
+        id="skills"
+      >
         <div>
           <p className=" text-2xl font-bold text-blue-900"> Skills</p>
           <p className=" w-10 h-[3px] bg-blue-500 rounded-md my-2"></p>

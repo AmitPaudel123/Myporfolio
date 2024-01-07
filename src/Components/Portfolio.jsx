@@ -8,7 +8,7 @@ import portfolio5 from "../Pictures/website.png";
 const Portfolio = () => {
   return (
     <>
-      <div className=" px-2 my-5 py-5 xl:float-right xl:w-[70%]">
+      <div className="px-2 my-5 py-5 xl:float-right xl:w-[70%]" id="portfolioo">
         <div>
           <p className=" text-2xl font-bold text-blue-900"> Portfolio</p>
           <p className=" w-10 h-[3px] bg-blue-500 rounded-md my-2"></p>
